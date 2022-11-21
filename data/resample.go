@@ -86,7 +86,7 @@ func Downsample(In [][][][]float32, N [3]int) [][][][]float32 {
 	return Out
 }
 
-func Downsample(in *Slice, N [3]int) *Slice{
+func Dwnsample(in *Slice, N [3]int) *Slice{
 	if in.Size() == N{
 		return in // nothing to do
 	}
@@ -135,7 +135,7 @@ func Downsample(in *Slice, N [3]int) *Slice{
 		}
 	}
 
-	return Out
+	return out
 }
 
 // Returns the 3D size of block
