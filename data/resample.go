@@ -38,8 +38,8 @@ func Downsample(In [][][][]float32, N [3]int) [][][][]float32 {
 		return In // nothing to do
 	}
 
-	In := in.Tensors()
-	out := NewSlice(in.NComp(), N)
+	nComp := len(In)
+	out := NewSlice(nComp, N)
 	Out := out.Tensors()
 
 	srcsize := SizeOf(In[0])
@@ -88,10 +88,10 @@ func Downsample(In [][][][]float32, N [3]int) [][][][]float32 {
 
 func Downsample(in *Slice, N [3]int) *Slice{
 	if in.Size() == N{
-		return In // nothing to do
+		return in // nothing to do
 	}
-	nComp := len(In)
-	out := NewSlice(nComp, N)
+	In := in.Tensors()
+	out := NewSlice(in.NComp(), N)
 	Out := out.Tensors()
 
 	srcsize := SizeOf(In[0])
