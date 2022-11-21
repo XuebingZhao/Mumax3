@@ -11,7 +11,7 @@ import (
 
 func resize(f *data.Slice, arg string) {
 	s := parseSize(arg)
-	resized := data.Downsample(f, s)
+	resized := data.Dwnsample(f, s)
 	*f = *resized
 }
 
